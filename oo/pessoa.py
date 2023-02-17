@@ -1,4 +1,6 @@
 class Pessoa:
+    olhos = 2  # #atributo defaut ou de classe
+
     def __init__(self, *filhos, nome=None, idade=None):
         # atributos de instância
         self.nome = nome
@@ -8,6 +10,10 @@ class Pessoa:
     # método
     def cumprimentar(self):
         return f'Olá {self.nome}! Idade: {self.idade} Id: {id(self)}'
+
+    """Ordem de busca do atributo:
+    1º olha na instância (esta no __init__())
+    2º olha na classe"""
 
 
 if __name__ == '__main__':
@@ -22,3 +28,5 @@ if __name__ == '__main__':
     p.sobrenome = 'Fernandes'
     print(p.__dict__)
 
+    print(Pessoa.olhos)
+    print(p.olhos)
