@@ -18,3 +18,7 @@ if __name__ == '__main__':
     p.idade = 24
     print(p.cumprimentar())
     print(p.filhos)
+
+    p.sobrenome = 'Fernandes'
+    print(p.__dict__)
+
