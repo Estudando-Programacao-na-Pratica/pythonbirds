@@ -11,6 +11,15 @@ class Pessoa:
     def cumprimentar(self):
         return f'Olá {self.nome}! Idade: {self.idade} Id: {id(self)}'
 
+    # método estático (pode ser executado pela instância ou pela classe)
+    @staticmethod
+    def metodo_estatico():
+        return 42
+
+    @classmethod
+    def nome_e_atributos_de_classe(cls):
+        return f'{cls} - olhos: {cls.olhos}'
+
     """Ordem de busca do atributo:
     1º olha na instância (esta no __init__())
     2º olha na classe"""
@@ -30,3 +39,6 @@ if __name__ == '__main__':
 
     print(Pessoa.olhos)
     print(p.olhos)
+
+    print(p.metodo_estatico(), p.nome_e_atributos_de_classe())
+    print(Pessoa.metodo_estatico(), Pessoa.nome_e_atributos_de_classe())
